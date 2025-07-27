@@ -2,319 +2,182 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Full Stack Notes by Folder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Full Stack Resources</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
-  <div class="w-full max-w-3xl bg-white shadow-md rounded-xl p-6">
-    <h1 class="text-3xl font-bold text-center text-indigo-600 mb-4">📂 Full Stack Journey Notes</h1>
+<body class="bg-gray-100 min-h-screen p-6 overflow-x-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-[25%_40%_35%] gap-6 max-w-7xl mx-auto">
 
-    <!-- Folder Management -->
-    <div class="flex flex-wrap gap-2 mb-4">
-      <select id="folder-select" class="p-2 border rounded grow">
-        <option value="" disabled selected>Select Folder</option>
-      </select>
-      <input id="new-folder" type="text" placeholder="New Folder" class="p-2 border rounded grow" />
-      <button onclick="createFolder()" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">+ Folder</button>
-    </div>
+    <!-- Left Column: Learning Resources -->
+    <aside class="bg-white shadow-md rounded-xl p-6 space-y-8 max-w-md mx-auto lg:max-w-none">
+      <section>
+        <h2 class="text-xl font-bold text-indigo-700 mb-4">🌐 Learn Full Stack (Free & Paid)</h2>
+        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-2">
+          <li><a href="https://fullstackopen.com/en/" target="_blank" class="text-blue-600 hover:underline">Full Stack Open</a> – React, Node.js, MongoDB, TypeScript</li>
+          <li><a href="https://www.theodinproject.com/" target="_blank" class="text-blue-600 hover:underline">The Odin Project</a> – Full-stack curriculum with projects</li>
+          <li><a href="https://developer.mozilla.org/" target="_blank" class="text-blue-600 hover:underline">MDN Web Docs</a> – Comprehensive web standards & JS</li>
+          <li><a href="https://freecodecamp.org/" target="_blank" class="text-blue-600 hover:underline">freeCodeCamp</a> – Learn web dev + free certificates</li>
+          <li><a href="https://roadmap.sh" target="_blank" class="text-blue-600 hover:underline">roadmap.sh</a> – Developer roadmaps and guides</li>
+          <li><a href="https://cs50.harvard.edu/" target="_blank" class="text-blue-600 hover:underline">Harvard CS50</a> – Intro to CS & programming (free certificate)</li>
+          <li><a href="https://www.appacademy.io/open" target="_blank" class="text-blue-600 hover:underline">App Academy Open</a> – Full-stack curriculum</li>
+          <li><a href="https://www.codecademy.com/learn/paths/full-stack-engineer" target="_blank" class="text-blue-600 hover:underline">Codecademy (free tier)</a> – Certificate with Pro plan</li>
+          <li><a href="https://hyperskill.org/" target="_blank" class="text-blue-600 hover:underline">Hyperskill (JetBrains)</a> – Guided learning paths</li>
+          <li><a href="https://www.w3schools.com/" target="_blank" class="text-blue-600 hover:underline">W3Schools</a> – HTML, CSS, JS tutorials</li>
+          <li><a href="https://exercism.org/" target="_blank" class="text-blue-600 hover:underline">Exercism</a> – Coding exercises & mentorship</li>
+          <li><a href="https://skillsbuild.org/" target="_blank" class="text-blue-600 hover:underline">IBM SkillsBuild</a> – Digital credentials & learning</li>
+          <li><a href="https://swayam.gov.in/" target="_blank" class="text-blue-600 hover:underline">SWAYAM (India)</a> – Free courses from Indian universities</li>
+          <li><a href="https://www.mygreatlearning.com/academy/learn-for-free" target="_blank" class="text-blue-600 hover:underline">Great Learning Academy</a> – Free courses + certificates</li>
+          <li><a href="https://www.classcentral.com/tag/full-stack-development" target="_blank" class="text-blue-600 hover:underline">Class Central</a> – Course aggregator</li>
+          <!-- Additional Resources -->
+          <li><a href="https://frontendmasters.com/" target="_blank" class="text-blue-600 hover:underline">Frontend Masters</a> – Deep front-end courses (paid)</li>
+          <li><a href="https://egghead.io/" target="_blank" class="text-blue-600 hover:underline">Egghead.io</a> – Bite-sized JavaScript & frameworks</li>
+          <li><a href="https://www.udemy.com/" target="_blank" class="text-blue-600 hover:underline">Udemy</a> – Large course catalog (paid/free)</li>
+          <li><a href="https://www.pluralsight.com/" target="_blank" class="text-blue-600 hover:underline">Pluralsight</a> – Tech skills platform (paid)</li>
+        </ul>
+      </section>
+    </aside>
 
-    <!-- Topic Filter Dropdown -->
-    <div class="mb-4">
-      <select id="topic-filter" class="p-2 border rounded w-full" onchange="renderNotes()">
-        <option value="" selected>All Topics</option>
-      </select>
-    </div>
+    <!-- Middle Column: Projects & Practice Ideas -->
+    <aside class="bg-white shadow-md rounded-xl p-6 space-y-8 max-w-2xl mx-auto lg:max-w-none">
+      <section>
+        <h2 class="text-xl font-bold text-indigo-700 mb-4">🚀 Projects & Practice Ideas</h2>
 
-    <!-- Note Input -->
-    <div class="mb-4">
-      <input id="note-title" type="text" placeholder="Note Title" class="w-full p-2 border rounded mb-2" />
-      <input id="note-topic" type="text" placeholder="Topic (optional)" class="w-full p-2 border rounded mb-2" />
-      <textarea id="note-content" rows="4" placeholder="Write your note here..." class="w-full p-2 border rounded"></textarea>
-      <button onclick="addNote()" class="mt-3 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">+ Add Note</button>
-    </div>
+        <button
+          type="button"
+          class="w-full flex justify-between items-center bg-gray-100 hover:bg-gray-200 p-3 rounded-md font-semibold text-gray-800"
+          aria-expanded="false"
+          aria-controls="projectList"
+          id="projectToggleBtn"
+          onclick="toggleSection('projectList', this)"
+        >
+          🧪 Practice Project Ideas (Click to Toggle)
+          <span id="projectToggleIcon">➕</span>
+        </button>
 
-    <!-- Export/Import Buttons -->
-    <div class="flex gap-2 mb-4">
-      <button onclick="exportData()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Export Notes</button>
-      <label for="import-file" class="px-4 py-2 bg-yellow-500 text-white rounded cursor-pointer hover:bg-yellow-600">Import Notes</label>
-      <input type="file" id="import-file" accept=".json" class="hidden" onchange="importData(event)" />
-    </div>
+        <ul
+          id="projectList"
+          class="hidden list-disc pl-5 text-gray-700 mt-4 space-y-1 text-sm transition-all duration-300"
+          aria-labelledby="projectToggleBtn"
+        >
+          <!-- Beginner -->
+          <li><strong>To-do App</strong> – CRUD, localStorage/Auth</li>
+          <li><strong>Portfolio Website</strong> – GitHub Pages + contact form</li>
+          <li><strong>Markdown Blog</strong> – Static site with Markdown</li>
+          <li><strong>Weather App</strong> – OpenWeatherMap API integration</li>
+          <li><strong>Note App</strong> – Rich text editor + categories + drag-drop</li>
+          <li><strong>Recipe Finder</strong> – Edamam or Spoonacular API</li>
+          <li><strong>Bookmark Manager</strong> – Tags, filter, sort UI</li>
 
-    <!-- Notes Display -->
-    <div id="notes-container" class="space-y-2">
-      <!-- Notes per folder will appear here -->
-    </div>
+          <!-- Intermediate -->
+          <li><strong>Blog CMS</strong> – Markdown + database + admin auth</li>
+          <li><strong>Expense Tracker</strong> – Chart.js visualizations</li>
+          <li><strong>Chat App</strong> – Firebase or WebSocket live chat</li>
+          <li><strong>E-commerce Site</strong> – Products, cart, checkout (Stripe)</li>
+          <li><strong>Habit Tracker</strong> – Monthly calendar + reminders</li>
+          <li><strong>Project Management Tool</strong> – Trello-style drag & drop</li>
+          <li><strong>Movie Finder</strong> – OMDB or TMDB API + favorites</li>
+          <li><strong>Fitness App</strong> – Workout logs + progress dashboard</li>
+
+          <!-- Advanced -->
+          <li><strong>Real-Time Collaborative Editor</strong> – WebRTC, Y.js (Google Docs clone)</li>
+          <li><strong>Social Network Clone</strong> – Posts, likes, follow feed (MERN stack)</li>
+          <li><strong>Online Code Editor</strong> – CodePen/Replit style (Monaco/CodeMirror)</li>
+          <li><strong>Crypto Dashboard</strong> – Live prices & charts (CoinGecko API)</li>
+          <li><strong>Online Poll/Quiz App</strong> – Auth + live results view</li>
+          <li><strong>Multi-step Form Wizard</strong> – UI/UX + backend integration</li>
+          <li><strong>Job Tracker App</strong> – CRUD + Kanban + filters</li>
+          <li><strong>Learning Management System</strong> – Courses, students, lessons</li>
+          <li><strong>Authentication System</strong> – JWT, refresh tokens, RBAC</li>
+          <li><strong>Stripe Subscriptions App</strong> – Recurring billing + dashboard</li>
+
+          <!-- Open Source -->
+          <li><a href="https://github.com/supabase/supabase" target="_blank" class="text-blue-600 hover:underline font-semibold">Supabase</a> – Open-source Firebase alternative (Postgres + Auth)</li>
+          <li><a href="https://github.com/remix-run/remix" target="_blank" class="text-blue-600 hover:underline font-semibold">Remix</a> – React full-stack framework</li>
+          <li><a href="https://github.com/vercel/next.js" target="_blank" class="text-blue-600 hover:underline font-semibold">Next.js</a> – Production-ready React full-stack</li>
+          <li><a href="https://github.com/novuhq/novu" target="_blank" class="text-blue-600 hover:underline font-semibold">Novu</a> – Notification infrastructure</li>
+          <li><a href="https://github.com/saasforge/saas-starter-kit" target="_blank" class="text-blue-600 hover:underline font-semibold">SaaS Starter Kit</a> – Stripe + Auth + Dashboard</li>
+          <li><a href="https://github.com/open-sauced/open-sauced" target="_blank" class="text-blue-600 hover:underline font-semibold">OpenSauced</a> – GitHub contribution project</li>
+        </ul>
+      </section>
+    </aside>
+
+    <!-- Right Column: Tools, Platforms, APIs & Interview Practice -->
+    <aside class="bg-white shadow-md rounded-xl p-6 space-y-8 max-w-md mx-auto lg:max-w-none">
+
+      <section>
+        <h2 class="text-xl font-bold text-indigo-700 mb-4">🔧 Tools, Platforms & APIs</h2>
+        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-2">
+          <li><a href="https://codepen.io" target="_blank" class="text-blue-600 hover:underline">CodePen</a> – Front-end playground</li>
+          <li><a href="https://codesandbox.io" target="_blank" class="text-blue-600 hover:underline">CodeSandbox</a> – Full-stack sandbox</li>
+          <li><a href="https://stackblitz.com" target="_blank" class="text-blue-600 hover:underline">StackBlitz</a> – Cloud IDE</li>
+          <li><a href="https://jsonplaceholder.typicode.com/" target="_blank" class="text-blue-600 hover:underline">JSONPlaceholder</a> – Fake REST API</li>
+          <li><a href="https://mockapi.io" target="_blank" class="text-blue-600 hover:underline">MockAPI.io</a> – Custom mock REST API</li>
+          <li><a href="https://github.com/30-seconds/30-seconds-of-code" target="_blank" class="text-blue-600 hover:underline">30 Seconds of Code</a> – JS snippets</li>
+          <li><a href="https://frontendmentor.io" target="_blank" class="text-blue-600 hover:underline">Frontend Mentor</a> – Real UI challenges</li>
+          <li><a href="https://dev.to" target="_blank" class="text-blue-600 hover:underline">DEV Community</a> – Blog & tutorials</li>
+          <li><a href="https://www.postman.com" target="_blank" class="text-blue-600 hover:underline">Postman</a> – API testing</li>
+          <li><a href="https://insomnia.rest" target="_blank" class="text-blue-600 hover:underline">Insomnia</a> – REST & GraphQL client</li>
+          <li><a href="https://swagger.io" target="_blank" class="text-blue-600 hover:underline">Swagger / OpenAPI</a> – API docs & testing</li>
+          <li><a href="https://vercel.com" target="_blank" class="text-blue-600 hover:underline">Vercel</a> – Deploy front-end apps</li>
+          <li><a href="https://netlify.com" target="_blank" class="text-blue-600 hover:underline">Netlify</a> – Static sites & serverless</li>
+          <li><a href="https://railway.app" target="_blank" class="text-blue-600 hover:underline">Railway</a> – Deploy Node/Postgres/Mongo apps</li>
+          <li><a href="https://firebase.google.com" target="_blank" class="text-blue-600 hover:underline">Firebase</a> – Auth, database, hosting</li>
+          <li><a href="https://supabase.com" target="_blank" class="text-blue-600 hover:underline">Supabase</a> – Open-source Firebase alternative</li>
+          <li><a href="https://render.com" target="_blank" class="text-blue-600 hover:underline">Render</a> – Full-stack hosting platform</li>
+          <li><a href="https://www.mongodb.com/atlas" target="_blank" class="text-blue-600 hover:underline">MongoDB Atlas</a> – Cloud NoSQL DB</li>
+          <li><a href="https://www.postgresql.org" target="_blank" class="text-blue-600 hover:underline">PostgreSQL</a> – Powerful relational DB</li>
+          <li><a href="https://d3js.org" target="_blank" class="text-blue-600 hover:underline">D3.js</a> – Data-driven visualizations</li>
+          <li><a href="https://chartjs.org" target="_blank" class="text-blue-600 hover:underline">Chart.js</a> – Chart library</li>
+          <li><a href="https://tailwindcss.com" target="_blank" class="text-blue-600 hover:underline">Tailwind CSS</a> – Utility-first CSS framework</li>
+          <li><a href="https://getbootstrap.com" target="_blank" class="text-blue-600 hover:underline">Bootstrap</a> – CSS component library</li>
+          <li><a href="https://eslint.org" target="_blank" class="text-blue-600 hover:underline">ESLint</a> – JavaScript linter</li>
+          <li><a href="https://prettier.io" target="_blank" class="text-blue-600 hover:underline">Prettier</a> – Code formatter</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-indigo-700 mt-8 mb-4">📈 Algo & Interview Practice</h2>
+        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-2">
+          <li><a href="https://leetcode.com" target="_blank" class="text-blue-600 hover:underline">LeetCode</a> – Algorithms & coding challenges</li>
+          <li><a href="https://www.hackerrank.com" target="_blank" class="text-blue-600 hover:underline">HackerRank</a> – Coding practice & contests</li>
+          <li><a href="https://www.codewars.com" target="_blank" class="text-blue-600 hover:underline">Codewars</a> – Kata challenges & community</li>
+          <li><a href="https://www.codingame.com" target="_blank" class="text-blue-600 hover:underline">CodinGame</a> – Coding games & challenges</li>
+          <li><a href="https://www.pramp.com" target="_blank" class="text-blue-600 hover:underline">Pramp</a> – Mock technical interviews</li>
+          <li><a href="https://www.interviewbit.com" target="_blank" class="text-blue-600 hover:underline">InterviewBit</a> – Interview prep & challenges</li>
+          <li><a href="https://www.geeksforgeeks.org" target="_blank" class="text-blue-600 hover:underline">GeeksforGeeks</a> – Tutorials & interview questions</li>
+          <li><a href="https://www.careercup.com" target="_blank" class="text-blue-600 hover:underline">CareerCup</a> – Interview questions archive</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-indigo-700 mt-8 mb-4">📚 API & Documentation</h2>
+        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-2">
+          <li><a href="https://developer.mozilla.org" target="_blank" class="text-blue-600 hover:underline">MDN Web Docs</a> – Web standards & JS docs</li>
+          <li><a href="https://developer.twitter.com/en/docs" target="_blank" class="text-blue-600 hover:underline">Twitter Developer Docs</a> – Example REST API</li>
+          <li><a href="https://docs.github.com/en/rest" target="_blank" class="text-blue-600 hover:underline">GitHub REST API</a></li>
+          <li><a href="https://restcountries.com" target="_blank" class="text-blue-600 hover:underline">REST Countries API</a> – Public API</li>
+          <li><a href="https://pokeapi.co" target="_blank" class="text-blue-600 hover:underline">PokeAPI</a> – Pokémon data API</li>
+          <li><a href="https://openweathermap.org/api" target="_blank" class="text-blue-600 hover:underline">OpenWeatherMap API</a></li>
+          <li><a href="https://newsapi.org" target="_blank" class="text-blue-600 hover:underline">NewsAPI</a> – News data API</li>
+          <li><a href="https://api.publicapis.org" target="_blank" class="text-blue-600 hover:underline">Public APIs</a> – Directory of free APIs</li>
+          <li><a href="https://developer.spotify.com/documentation/web-api" target="_blank" class="text-blue-600 hover:underline">Spotify Web API</a></li>
+          <li><a href="https://developers.google.com/apis-explorer" target="_blank" class="text-blue-600 hover:underline">Google APIs Explorer</a></li>
+        </ul>
+      </section>
+
+    </aside>
+
   </div>
 
   <script>
-    let data = {};
-
-    function saveData() {
-      localStorage.setItem("fs-notes-foldered", JSON.stringify(data));
+    function toggleSection(id, btn) {
+      const section = document.getElementById(id);
+      const icon = document.getElementById('projectToggleIcon');
+      const isHidden = section.classList.toggle('hidden');
+      icon.textContent = isHidden ? '➕' : '➖';
+      btn.setAttribute('aria-expanded', !isHidden);
     }
-
-    function createFolder() {
-      const folderName = document.getElementById("new-folder").value.trim();
-      if (!folderName) return alert("Folder name cannot be empty.");
-
-      if (!data[folderName]) {
-        data[folderName] = [];
-        saveData();
-        document.getElementById("new-folder").value = "";
-        renderFolders();
-      } else {
-        alert("Folder already exists.");
-      }
-    }
-
-    function renderFolders() {
-      const folderSelect = document.getElementById("folder-select");
-      folderSelect.innerHTML = `<option value="" disabled selected>Select Folder</option>`;
-      Object.keys(data).forEach(folder => {
-        const opt = document.createElement("option");
-        opt.value = folder;
-        opt.textContent = folder;
-        folderSelect.appendChild(opt);
-      });
-      renderTopicFilter();
-      renderNotes();
-    }
-
-    function addNote() {
-      const folder = document.getElementById("folder-select").value;
-      const title = document.getElementById("note-title").value.trim();
-      const content = document.getElementById("note-content").value.trim();
-      const topic = document.getElementById("note-topic").value.trim();
-      if (!folder || !title || !content) return alert("Please select folder and fill all required fields.");
-
-      data[folder].push({ title, content, topic });
-      saveData();
-      document.getElementById("note-title").value = "";
-      document.getElementById("note-content").value = "";
-      document.getElementById("note-topic").value = "";
-      renderTopicFilter();
-      renderNotes();
-    }
-
-    function deleteNote(folder, index) {
-      data[folder].splice(index, 1);
-      saveData();
-      renderTopicFilter();
-      renderNotes();
-    }
-
-    function renderTopicFilter() {
-      const folder = document.getElementById("folder-select").value;
-      const topicFilter = document.getElementById("topic-filter");
-      topicFilter.innerHTML = `<option value="">All Topics</option>`;
-
-      if (!folder || !data[folder]) return;
-
-      const topics = new Set();
-      data[folder].forEach(note => {
-        if (note.topic) topics.add(note.topic);
-      });
-
-      topics.forEach(topic => {
-        const opt = document.createElement("option");
-        opt.value = topic;
-        opt.textContent = topic;
-        topicFilter.appendChild(opt);
-      });
-    }
-
-    function renderNotes() {
-      const container = document.getElementById("notes-container");
-      const folder = document.getElementById("folder-select").value;
-      const topicFilterValue = document.getElementById("topic-filter").value;
-      container.innerHTML = "";
-
-      if (!folder || !data[folder]) return;
-
-      const notesToShow = data[folder].filter(note => {
-        if (!topicFilterValue) return true;
-        return note.topic === topicFilterValue;
-      });
-
-      if (notesToShow.length === 0) {
-        container.innerHTML = `<p class="text-gray-500 italic">No notes to display.</p>`;
-        return;
-      }
-
-      notesToShow.forEach((note, idx) => {
-        const card = document.createElement("div");
-        card.className = "bg-gray-50 border rounded-lg p-4 relative mb-2 cursor-move";
-        card.setAttribute("draggable", "true");
-        card.dataset.index = idx;
-
-        card.innerHTML = `
-          <div class="flex justify-between items-center cursor-pointer select-none" onclick="toggleCollapse(this)">
-            <h3 class="text-xl font-bold text-indigo-700">${note.title}</h3>
-            <button class="text-indigo-600 hover:text-indigo-900" aria-label="Toggle content">▼</button>
-          </div>
-          <div class="note-content mt-2">
-            ${note.topic ? `<p class="text-sm text-indigo-500 italic mb-2">Topic: ${note.topic}</p>` : ""}
-            <p class="text-gray-700 whitespace-pre-line">${note.content}</p>
-          </div>
-          <button onclick="deleteNote('${folder}', ${idx})" class="absolute top-2 right-2 text-red-500 hover:text-red-700">✕</button>
-        `;
-
-        card.addEventListener("dragstart", dragStart);
-        card.addEventListener("dragover", dragOver);
-        card.addEventListener("drop", drop);
-        card.addEventListener("dragend", dragEnd);
-
-        container.appendChild(card);
-      });
-    }
-
-    function toggleCollapse(headerDiv) {
-      const card = headerDiv.parentElement;
-      const contentDiv = card.querySelector(".note-content");
-      const button = headerDiv.querySelector("button");
-
-      if (contentDiv.style.display === "none") {
-        contentDiv.style.display = "block";
-        button.textContent = "▼";
-      } else {
-        contentDiv.style.display = "none";
-        button.textContent = "►";
-      }
-    }
-
-    let dragSrcEl = null;
-
-    function dragStart(e) {
-      dragSrcEl = e.currentTarget;
-      e.dataTransfer.effectAllowed = "move";
-      e.dataTransfer.setData("text/html", dragSrcEl.outerHTML);
-      dragSrcEl.classList.add("opacity-50");
-    }
-
-    function dragOver(e) {
-      e.preventDefault();
-      e.dataTransfer.dropEffect = "move";
-      const target = e.currentTarget;
-      if (target && target !== dragSrcEl) {
-        target.classList.add("border-dashed", "border-4", "border-indigo-400");
-      }
-    }
-
-    function drop(e) {
-      e.stopPropagation();
-      const target = e.currentTarget;
-      if (dragSrcEl !== target) {
-        const folder = document.getElementById("folder-select").value;
-        const topicFilterValue = document.getElementById("topic-filter").value;
-
-        const filteredNotes = data[folder].filter(note => {
-          if (!topicFilterValue) return true;
-          return note.topic === topicFilterValue;
-        });
-
-        const dragIndex = Number(dragSrcEl.dataset.index);
-        const dropIndex = Number(target.dataset.index);
-
-        const draggedNote = filteredNotes[dragIndex];
-
-        const fullFolderNotes = data[folder];
-        const removeIndex = fullFolderNotes.findIndex(n => n.title === draggedNote.title && n.content === draggedNote.content && n.topic === draggedNote.topic);
-        if (removeIndex === -1) return;
-
-        fullFolderNotes.splice(removeIndex, 1);
-
-        const dropNote = filteredNotes[dropIndex];
-        const insertIndex = fullFolderNotes.findIndex(n => n.title === dropNote.title && n.content === dropNote.content && n.topic === dropNote.topic);
-
-        if (dragIndex < dropIndex) {
-          fullFolderNotes.splice(insertIndex + 1, 0, draggedNote);
-        } else {
-          fullFolderNotes.splice(insertIndex, 0, draggedNote);
-        }
-
-        saveData();
-        renderNotes();
-      }
-      target.classList.remove("border-dashed", "border-4", "border-indigo-400");
-    }
-
-    function dragEnd(e) {
-      e.currentTarget.classList.remove("opacity-50");
-      document.querySelectorAll("#notes-container > div").forEach(el => {
-        el.classList.remove("border-dashed", "border-4", "border-indigo-400");
-      });
-    }
-
-    function exportData() {
-      const json = JSON.stringify(data, null, 2);
-      const blob = new Blob([json], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "full-stack-notes.json";
-      a.click();
-      URL.revokeObjectURL(url);
-    }
-
-    function importData(event) {
-      const file = event.target.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        try {
-          const importedData = JSON.parse(e.target.result);
-
-          for (const folder in importedData) {
-            if (!data[folder]) {
-              data[folder] = importedData[folder];
-            } else {
-              const existingNotes = data[folder];
-              importedData[folder].forEach(note => {
-                if (!existingNotes.some(n => n.title === note.title && n.content === note.content)) {
-                  existingNotes.push(note);
-                }
-              });
-            }
-          }
-
-          saveData();
-          renderFolders();
-          alert("Notes imported successfully!");
-          event.target.value = "";
-        } catch (err) {
-          alert("Failed to import notes. Invalid JSON file.");
-        }
-      };
-      reader.readAsText(file);
-    }
-
-    document.getElementById("folder-select").addEventListener("change", () => {
-      renderTopicFilter();
-      renderNotes();
-    });
-
-    // ✅ New onload: load from localStorage OR GitHub-hosted JSON
-    window.onload = async function () {
-      const stored = localStorage.getItem("fs-notes-foldered");
-      if (stored) {
-        data = JSON.parse(stored);
-        renderFolders();
-      } else {
-        try {
-          const res = await fetch("full-stack-notes.json");
-          if (!res.ok) throw new Error("Unable to load fallback notes.");
-          data = await res.json();
-          saveData();  // Store in localStorage
-          renderFolders();
-        } catch (err) {
-          console.error("Failed to load default notes:", err);
-          data = {};
-          renderFolders();
-        }
-      }
-    };
   </script>
 </body>
 </html>
