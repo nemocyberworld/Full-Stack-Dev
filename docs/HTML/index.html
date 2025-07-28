@@ -1,1 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Review Notes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background: #f9f9f9;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code {
+      background: #eaeaea;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-left: 4px solid #3498db;
+      overflow-x: auto;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
 
+  <h1>HTML Review Notes</h1>
+
+  <section>
+    <h2>HTML Basics</h2>
+    <ul>
+      <li><strong>Role of HTML:</strong> HTML is the foundation of web structure, defining the elements of a webpage.</li>
+      <li><strong>HTML Elements:</strong> Represent content using opening and closing tags (e.g., <code>&lt;h1&gt;&lt;/h1&gt;</code>).</li>
+      <li><strong>HTML Structure:</strong> Consists of a <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>.</li>
+      <li><strong>Common Elements:</strong> Headings (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>), paragraphs (<code>&lt;p&gt;</code>), containers (<code>&lt;div&gt;</code>).</li>
+      <li><strong>Void Elements:</strong> Elements without a closing tag (e.g., <code>&lt;img&gt;</code>).</li>
+      <li><strong>Attributes:</strong> Add metadata and behavior to elements.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Identifiers and Grouping</h2>
+    <ul>
+      <li><strong>IDs:</strong> Unique identifiers.</li>
+      <li><strong>Classes:</strong> Grouping for styling and behavior.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Special Characters and Linking</h2>
+    <ul>
+      <li><strong>HTML Entities:</strong> e.g., <code>&amp;amp;</code>, <code>&amp;lt;</code>.</li>
+      <li><strong>Link element:</strong> For external stylesheets.</li>
+      <li><strong>Script element:</strong> For external JavaScript.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Boilerplate and Encoding</h2>
+    <ul>
+      <li><strong>HTML Boilerplate:</strong> Includes <code>&lt;!DOCTYPE&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code>.</li>
+      <li><strong>UTF-8 Encoding:</strong> Ensures universal character display.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>SEO and Social Sharing</h2>
+    <ul>
+      <li><strong>Meta tags:</strong> Affect SEO.</li>
+      <li><strong>Open Graph tags:</strong> Improve social media previews.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Media Elements and Optimization</h2>
+    <ul>
+      <li><strong>Replaced Elements:</strong> Like <code>&lt;img&gt;</code> and <code>&lt;iframe&gt;</code>.</li>
+      <li><strong>Media Optimization:</strong> Improve performance and compatibility.</li>
+      <li><strong>Image Formats and Licenses:</strong> Know types and usage rights.</li>
+      <li><strong>SVGs:</strong> Scalable vector graphics.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Multimedia Integration</h2>
+    <ul>
+      <li><strong>Audio & Video:</strong> Use <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code>.</li>
+      <li><strong><code>&lt;iframe&gt;</code>:</strong> Embed external content (e.g., YouTube).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Paths and Link Behavior</h2>
+    <ul>
+      <li><strong>Target attribute:</strong> Controls link behavior (e.g., <code>_blank</code>).</li>
+      <li><strong>Absolute vs Relative Paths</strong></li>
+      <li><strong>Path Syntax:</strong> <code>/</code>, <code>./</code>, <code>../</code>.</li>
+      <li><strong>Link States:</strong> Hover, active, etc.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Semantic HTML</h2>
+    <h3>Structure and Elements</h3>
+    <ul>
+      <li><code>&lt;header&gt;</code>: Introductory content</li>
+      <li><code>&lt;nav&gt;</code>: Navigation links</li>
+      <li><code>&lt;article&gt;</code>: Self-contained content</li>
+      <li><code>&lt;aside&gt;</code>: Sidebar or related content</li>
+      <li><code>&lt;section&gt;</code>: Related content grouping</li>
+      <li><code>&lt;footer&gt;</code>: Footer section</li>
+    </ul>
+
+    <h3>Other Semantic Tags</h3>
+    <ul>
+      <li><code>&lt;em&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;b&gt;</code></li>
+      <li><code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code></li>
+      <li><code>&lt;blockquote&gt;</code>, <code>&lt;q&gt;</code></li>
+      <li><code>&lt;abbr&gt;</code>, <code>&lt;address&gt;</code>, <code>&lt;time&gt;</code></li>
+      <li><code>&lt;sup&gt;</code>, <code>&lt;sub&gt;</code>, <code>&lt;code&gt;</code></li>
+      <li><code>&lt;u&gt;</code>, <code>&lt;ruby&gt;</code>, <code>&lt;s&gt;</code></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>HTML Forms and Attributes</h2>
+    <p><strong>Form Structure:</strong></p>
+    <pre><code>&lt;form method="POST" action="submit-url"&gt;
+  &lt;input type="text" name="name" placeholder="Your Name" required /&gt;
+&lt;/form&gt;</code></pre>
+
+    <p><strong>Common Attributes:</strong> <code>type</code>, <code>name</code>, <code>placeholder</code>, <code>required</code>, <code>disabled</code>, <code>readonly</code></p>
+
+    <p><strong>Labels:</strong></p>
+    <pre><code>&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email" /&gt;</code></pre>
+
+    <p><strong>Radio and Checkbox Example:</strong></p>
+    <pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Choose Options&lt;/legend&gt;
+  &lt;label&gt;&lt;input type="checkbox" name="option" value="1" /&gt; One&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+
+    <p><strong>Buttons:</strong></p>
+    <pre><code>&lt;button type="submit"&gt;Submit&lt;/button&gt;</code></pre>
+  </section>
+
+  <section>
+    <h2>HTML Tables</h2>
+    <pre><code>&lt;table&gt;
+  &lt;caption&gt;Grades&lt;/caption&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Alex&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+  &lt;tfoot&gt;&lt;tr&gt;&lt;td&gt;Average&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+  </section>
+
+  <section>
+    <h2>HTML Tools</h2>
+    <ul>
+      <li><strong>HTML Validator:</strong> Checks for valid syntax.</li>
+      <li><strong>DOM Inspector:</strong> Examine live HTML in browser.</li>
+      <li><strong>DevTools:</strong> Browser debugging tools.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Accessibility Overview</h2>
+    <h3>WCAG Principles (POUR)</h3>
+    <ul>
+      <li><strong>Perceivable</strong></li>
+      <li><strong>Operable</strong></li>
+      <li><strong>Understandable</strong></li>
+      <li><strong>Robust</strong></li>
+    </ul>
+
+    <h3>Assistive Technologies</h3>
+    <ul>
+      <li>Screen readers, Braille keyboards, Voice recognition, etc.</li>
+    </ul>
+
+    <h3>Best Practices</h3>
+    <ul>
+      <li>Use correct heading levels</li>
+      <li>Use <code>&lt;label&gt;</code> with form inputs</li>
+      <li>Provide alt text for images</li>
+      <li>Use descriptive link text</li>
+      <li>Include captions/transcripts for multimedia</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>WAI-ARIA and Roles</h2>
+    <ul>
+      <li><strong>ARIA Roles:</strong> <code>role="alert"</code>, <code>role="menu"</code>, etc.</li>
+      <li><strong>aria-label / aria-labelledby:</strong> Provide accessible names.</li>
+      <li><strong>aria-hidden:</strong> Hide decorative elements.</li>
+      <li><strong>aria-expanded:</strong> Toggle visibility state.</li>
+      <li><strong>aria-live:</strong> Announce live updates.</li>
+      <li><strong>aria-controls / aria-describedby:</strong> Element associations.</li>
+    </ul>
+  </section>
+
+</body>
+</html>
